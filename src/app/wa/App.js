@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-import waApi from './wa-api';
+import waApi from '../wa-api';
 
 function App() {
   const [value, setValue] = useState(5);
