@@ -7,6 +7,9 @@ function App() {
   const [value, setValue] = useState(5);
   const [result, setResult] = useState();
   const [scamble, setScramble] = useState('scramble this string');
+  const [type, queryType] = useState('getType');
+
+  let shape = waApi.Shape.wrap(waApi.getShape())
 
   return (
     <div className="App">
@@ -24,6 +27,12 @@ function App() {
       <button onClick={async () => setScramble((await waApi).scramble(scamble))}>
         Scramble
       </button>
+
+      <p>Shape  is: {type}</p>
+      <button onClick={async () => queryType(waApi.__get_size(shape.get_size()))}>
+        queryShape
+      </button>
+
     </div>
   );
 }

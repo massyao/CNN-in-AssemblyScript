@@ -1,5 +1,14 @@
 // The entry file of your WebAssembly module.
+// import module from './cnn/model';
+// import Shape from './util/mat_shape';
+
 NativeMath.seedRandom(1234);
+
+// export function getShape() : Shape {
+//   return new Shape(100, 200, 300)
+// }
+
+export import Shape from './util/mat_shape';
 
 export function factorial(value: f64): f64 {
   if (value == 0 || value == 1) return 1;
